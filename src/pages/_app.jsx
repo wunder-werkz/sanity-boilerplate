@@ -1,4 +1,4 @@
-import '~/styles/global.css';
+import '~/styles/global.scss';
 import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google';
 import { lazy } from 'react';
 const PreviewProvider = lazy(() => import('~/components/PreviewProvider'));
