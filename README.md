@@ -42,19 +42,19 @@ You can use this starter to kick-start a clean slate site or learn these technol
 
 | File(s)                          | Description                                                                           |
 | -------------------------------- | ------------------------------------------------------------------------------------- |
-| `sanity.config.ts`               | Config file for Sanity Studio                                                         |
-| `sanity.cli.ts`                  | Config file for Sanity CLI                                                            |
-| `/pages/index.tsx`               | Landing page for `/`.                                                                 |
-| `/pages/studio/[[...index]].tsx` | Where Sanity Studio is mounted                                                        |
-| `/pages/api/draft.ts`            | Serverless route for triggering Draft mode                                            |
-| `/sanity/schemas.ts`             | Where Sanity Studio gets its content types from                                       |
-| `/sanity/env.ts`                 | Configuration for the Sanity project and dataset                                      |
-| `/sanity/schemas.ts`             | Where Sanity Studio gets its content types from                                       |
-| `/sanity/lib/client.ts`          | Sanity client configured based on `env.ts`                                            |
-| `/sanity/lib/image.ts`           | Sanity image builder - unused in this template, but is needed to render Sanity images |
+| `sanity.config.js`               | Config file for Sanity Studio                                                         |
+| `sanity.cli.js`                  | Config file for Sanity CLI                                                            |
+| `/pages/index.jsx`               | Landing page for `/`.                                                                 |
+| `/pages/studio/[[...index]].jsx` | Where Sanity Studio is mounted                                                        |
+| `/pages/api/draft.js`            | Serverless route for triggering Draft mode                                            |
+| `/sanity/schemas.js`             | Where Sanity Studio gets its content types from                                       |
+| `/sanity/env.js`                 | Configuration for the Sanity project and dataset                                      |
+| `/sanity/schemas.js`             | Where Sanity Studio gets its content types from                                       |
+| `/sanity/lib/client.js`          | Sanity client configured based on `env.js`                                            |
+| `/sanity/lib/image.js`           | Sanity image builder - unused in this template, but is needed to render Sanity images |
 | `tailwind.config.js`             | Tailwind config. Only applies to files listed under `content`                         |
 
-All pages are wrapped in `pages/_document.tsx` and `pages/_app.tsx`.
+All pages are wrapped in `pages/_document.jsx` and `pages/_app.jsx`.
 
 ## Configuration
 
@@ -118,7 +118,7 @@ In case of any issues or questions, you can post:
 
 ### How can I remove the "Next steps" block from my app?
 
-You can remove it by deleting `intro-template`, and removing `IntroTemplate` usage from `pages/index.tsx`
+You can remove it by deleting `intro-template`, and removing `IntroTemplate` usage from `pages/index.jsx`
 
 ## Next steps
 
