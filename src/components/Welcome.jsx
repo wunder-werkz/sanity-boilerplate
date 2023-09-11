@@ -1,17 +1,14 @@
-import Image from 'next/image'
-import Link from 'next/link'
-
-import NextLogo from './nextjs.svg'
-import SanityLogo from './sanity.svg'
-
+import Image from 'next/image';
+import Link from 'next/link';
+import NextLogo from './nextjs.svg';
+import SanityLogo from './sanity.svg';
 export default function Welcome() {
-  return (
-    <div className="welcome__container">
+    return (<div className="welcome__container">
       <div className="logos">
         <div className="logos__blur"></div>
-        <Image className="logos__entry" src={NextLogo} alt="Next.js Logo" />
+        <Image className="logos__entry" src={NextLogo} alt="Next.js Logo"/>
         <span className="logos__plus">+</span>
-        <Image className="logos__entry" src={SanityLogo} alt="Sanity Logo" />
+        <Image className="logos__entry" src={SanityLogo} alt="Sanity Logo"/>
       </div>
       <div className="steps">
         <h2 className="steps__title">Next steps</h2>
@@ -27,11 +24,7 @@ export default function Welcome() {
             <h3 className="step__title">Dive into the documentation</h3>
             <p className="steps__text">
               Check out{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                href="https://www.sanity.io/docs"
-              >
+              <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.sanity.io/docs">
                 the documentation
               </a>{' '}
               to learn more about Sanity.
@@ -41,11 +34,7 @@ export default function Welcome() {
             <h3 className="steps__subtitle">Join the Sanity Community</h3>
             <p className="steps__text">
               Leverage{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                href="https://www.sanity.io/exchange/community"
-              >
+              <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.sanity.io/exchange/community">
                 our awesome community
               </a>
               , and share tips and discuss!
@@ -53,6 +42,5 @@ export default function Welcome() {
           </li>
         </ul>
       </div>
-    </div>
-  )
+    </div>);
 }
