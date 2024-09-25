@@ -1,0 +1,962 @@
+@import url("https://use.typekit.net/qhd4qnk.css");
+@import "./vars";
+
+html,
+body {
+  @include body-font();
+  background-color: $white;
+  color: $black;
+  margin: 0;
+  max-width: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include header-font();
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+}
+
+a,
+.link {
+  color: inherit;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  &:not(.button):not(.no-line):not(.btn) {
+    white-space: nowrap;
+    @include x-small {
+      white-space: normal;
+    }
+    &:before {
+      content: "";
+      background: $green;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      pointer-events: none;
+      width: 100%;
+      top: 100%;
+      transition: transform 0.3s;
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
+    }
+    &:hover {
+      outline: none;
+      color: inherit;
+      cursor: pointer;
+      &:before {
+        transform-origin: 100% 50%;
+        transform: scale3d(0, 1, 1);
+      }
+    }
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+footer {
+  a, .link {
+      &:not(.button):not(.no-line):not(.btn) {
+      &:before {
+        content: "";
+        background: $green;
+        height: 1px;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        width: 100%;
+        top: 100%;
+        transition: transform 0.3s;
+        transform-origin: 100% 50%;
+        transform: scale3d(0, 1, 1);
+      }
+      &:hover {
+        outline: none;
+        color: inherit;
+        cursor: pointer;
+        &:before {
+          transform-origin: 0% 50%;
+          transform: scale3d(1, 1, 1);  
+        }
+      }
+    }
+  }
+}
+
+.link {
+  @include subhead-bold();
+  font-weight: $subhead-medium-font;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-display: swap;
+  drop-shadow: none !important ;
+  &:focus-visible {
+    display: none;
+  }
+}
+
+h1 {
+  @include h1();
+}
+
+h2 {
+  @include h2();
+}
+
+h3 {
+  @include h3();
+  white-space: normal;
+}
+
+h4 {
+  @include h4();
+}
+
+h5 {
+  @include h5();
+}
+
+h6 {
+  @include h6();
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 10px 0;
+
+}
+p, .text-wrapper {
+  ul {
+    list-style: none;
+    li {
+      
+      list-style: none;
+      min-height: 30px;
+      padding-left: 10px;
+      position: relative;
+      &:marker {
+        display: none;
+      }
+      &:before {
+        content: "+";
+        font-size: 2rem;
+        font-family: $header-font-family;
+        position: absolute;
+        left: -15px;
+        top: -1px;
+      }
+    }
+  }
+}
+
+
+/* LOGO */
+.logo-link {
+  margin-right: 30px;
+}
+
+.logo {
+  display: block;
+  height: 60px;
+  width: 100%;
+  @include small {
+    padding: 10px 0;
+  }
+  @include mobile {
+    max-width: 220px;
+  }
+  svg {
+    height: 100%;
+    width: auto;
+    path {
+      fill: $black;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    path {
+      fill: $orange;
+    }
+  }
+}
+/* MAP */
+.pin {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  background-color: $green;
+  border: 3px solid $green;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+
+  svg {
+    height: 30px;
+    width: 100%;
+    path {
+      fill: $white;
+    }
+  }
+}
+/* BUTTONS */
+a.button {
+  text-decoration: none;
+}
+
+.micro-copy {
+  @include micro();
+  color: $white;
+  text-transform: capitalize;
+}
+
+label {
+  @include micro();
+  color: $white;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  @include body-font();
+  a:before {
+    top: 100% !important;
+    transform-origin: 0% 50% !important;
+    transform: scale3d(1, 1, 1) !important;
+    transition: transform 0.3s;
+  }
+  a:hover:before {
+    transform-origin: 100% 50% !important;
+    transform: scale3d(0, 1, 1) !important;
+  }
+}
+
+.eyebrow,
+.eyebrow p {
+  @include eyebrow();
+  margin: 0;
+}
+
+.address {
+  @include subhead-three();
+  .address-row {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+    margin-bottom: 6px;
+  }
+  a {
+    background-color: transparent;
+    color: $black;
+    transition: all 0.25s linear;
+  }
+  a:hover {
+    background-color: $black;
+    color: $white !important;
+  }
+  &.black {
+    a:hover {
+      background-color: $white;
+      color: $black !important;
+    }
+  }
+}
+
+.label {
+  @include body-font();
+  font-size: calc(10pt + (13 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-wrapper {
+  max-width: 700px;
+  ul {
+    list-style: circle;
+    padding-left: 30px;
+  }
+}
+
+svg.white {
+  max-height: 100%;
+  width: 100%;
+  path, polygon, polyline, ellipse, circle, line, rect, .cls-1, .cls-2 {
+    fill: $white;
+  }
+
+}
+
+/* Contact Page Dropdown */
+
+.Dropdown-root {
+  position: relative;
+  .Dropdown-control {
+    background-color: $white;
+    border: 2px solid $green;
+    border-radius: unset;
+    padding: unset;
+  }
+  .Dropdown-menu {
+    background-color: $white;
+    border: 2px solid $green;
+    box-shadow: unset;
+    margin-top: 0;
+    z-index: 900;
+    .Dropdown-option {
+      color: $black;
+      padding: 8px 15px;
+      &.is-selected {
+        background-color: $green;
+      }
+      &:hover {
+        background-color: $green;
+      }
+    }
+  }
+  &.is-open {
+    .Dropdown-arrow {
+      border: none;
+      &:before {
+        transform: scaleY(-1);
+      }
+    }
+  }
+  .Dropdown-arrow {
+    border: none;
+    &:before {
+      background: $white;
+      background-image: url("../public/down-arrow.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      bottom: -10px;
+      content: " ";
+      display: block;
+      height: 20px;
+      width: 14px;
+      left: -10px;
+      position: absolute;
+      transition: transform 0.15s linear;
+      z-index: 900;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.Dropdown-placeholder {
+  height: 100%;
+  padding: 5px 15px !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.Dropdown-option {
+  padding: 5px 15px;
+  &:hover {
+    cursor: pointer;
+    background-color: $green;
+  }
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Styles page */
+#styles {
+  padding: 0 90px;
+}
+
+/* NewsletterForm input */
+.mc-field-group {
+  width: 100%;
+}
+.form-info {
+  font-size: 10pt;
+  line-height: 10pt;
+  padding-top: 10px;
+}
+
+/* Hours */
+
+.hours-sub-group {
+  @include flexbox();
+  @include flex-wrap(wrap);
+  @include subhead-three();
+  text-transform: uppercase;
+  line-height: 100%;
+  padding-bottom: 10px;
+  .day-range {
+    margin-right: 10px;
+  }
+}
+.newsletter-input-fields {
+  @include flexbox();
+  @include justify-content(space-between);
+  border-bottom: 2px solid $white;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  max-width: 500px;
+  width: 100%;
+  @include small {
+    margin-top: 10px;
+    max-width: 600px;
+  }
+  @include tablet-and-lower {
+    max-width: unset;
+  }
+  @include mobile {
+    @include flex-direction(column);
+    border-bottom: none;
+  }
+  @include x-small {
+    border-bottom: none;
+  }
+  .mc-field-group {
+    input {
+      @include subhead-three();
+      background-color: transparent;
+      border: none;
+      font-size: 9pt;
+      padding-top: 15px;
+      width: 100%;
+      &::placeholder {
+        color: $white;
+      }
+      &:focus {
+        color: $white;
+        outline: none;
+      }
+    }
+    @include mobile {
+      border-bottom: 1px solid $white;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+  }
+  .submit-wrapper {
+    @include x-small {
+      @include flexbox();
+      @include justify-content(flex-end);
+    }
+  }
+  &.modal {
+    max-width: none;
+    border-color: $black;
+    .mc-field-group {
+      input {
+        &::placeholder {
+          color: $black;
+        }
+        &:focus {
+          color: $black;
+        }
+      }
+      @include mobile {
+        border-bottom: 1px solid $black;
+      }
+    }
+    @include mobile {
+      border-bottom: none;
+    }
+  }
+}
+
+/* BUTTONS */
+.primary-link {
+  background-color: $white;
+  .btn-primary {
+    @include button();
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    border: 2px solid $black;
+    color: $black;
+    margin: 0;
+    min-width: 170px;
+    padding: 12px 20px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    --_g1: conic-gradient(from 90deg at 50% 75%,   #ece6dc 90deg, #31b798 0)
+      no-repeat;
+    --_g2: conic-gradient(from 90deg at 50% 75%, #ece6dc 90deg, #31b798 0)
+      no-repeat;
+    background:
+      var(--_g1) 0 calc(134% - var(--_p, 0%)),
+      var(--_g2) 0 calc(134% - var(--_p, 0%)),
+      var(--_g1) 100% calc(200% - var(--_p, 0%)),
+      var(--_g2) 100% calc(200% - var(--_p, 0%)),
+      #31b798;
+    background-size: 50.2% 400%;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.8s;
+    @include x-small {
+      min-width: 150px;
+    }
+  }
+  .btn-primary:hover {
+    --_p: 134%;
+  }
+
+  &.inverse {
+    background-color: $black;
+    .btn-primary {
+      border: 2px solid $white;
+      color: $white;
+      --_g1: conic-gradient(from 90deg at 50% 75%, #101111 90deg, #ece6dc 0)
+        no-repeat;
+      --_g2: conic-gradient(from 90deg at 50% 75%, #101111 90deg, #ece6dc 0)
+        no-repeat;
+      background:
+        var(--_g1) 0 calc(134% - var(--_p, 0%)),
+        var(--_g2) 0 calc(134% - var(--_p, 0%)),
+        var(--_g1) 100% calc(200% - var(--_p, 0%)),
+        var(--_g2) 100% calc(200% - var(--_p, 0%)),
+        #101111;
+      background-size: 50.2% 400%;
+    }
+    .btn-primary:hover {
+      color: $black;
+    }
+  }
+}
+
+button {
+  &:focus,
+  &:focus-visible,
+  &:active {
+    box-shadow: none;
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn-secondary {
+    @include button();
+    @include flexbox();
+    @include align-items(center);
+    background-color: transparent;
+    border: none;
+    border-bottom: $border;
+    color: $black;
+    padding: 7px 10px;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    z-index: 1000;
+    &.white {
+      border-color: $white;
+      color: $white;
+      &:hover {
+        background-color: $white;
+        cursor: pointer;
+        color: $black;
+      }
+    }
+    &:hover {
+      background-color: $black;
+      cursor: pointer;
+      color: $white;
+    }
+  }
+  &.btn-submit {
+    @include button();
+    @include flexbox();
+    @include align-items(center);
+    background-color: $white;
+    border: 2px solid $white;
+    color: $black;
+    padding: 6px 12px 6px 15px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    z-index: 1000;
+    .btn-text-arrow {
+      @include flexbox();
+      @include align-items(center);
+      svg {
+        margin-left: 13px;
+        transition: all 0.3s ease-in-out;
+        width: 30px;
+        @include x-small {
+          width: 20px;
+        }
+      }
+    }
+    &:hover {
+      background-color: $black;
+      color: $white;
+      padding-right: 8px;
+      svg {
+        margin-left: 17px;
+        path {
+          fill: $white;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+    &.inverse {
+      background-color: $black;
+      border: $border;
+      color: $white;
+      svg {
+        path {
+          fill: $white;
+        }
+      }
+      &:hover {
+        background-color: $white;
+        color: $black;
+        svg {
+          path {
+            fill: $black;
+          }
+        }
+      }
+    }
+    &.modal {
+      background-color: transparent;
+      border-color: $black;
+      &:hover {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+/* TEXT WRAPPER */
+.text-wrapper {
+  padding: 20px 0 30px 0;
+}
+
+/* SVG */
+svg {
+  &.color-yellow {
+    path {
+      fill: $yellow;
+    }
+  }
+  &.color-green {
+    path {
+      fill: $green;
+    }
+  }
+  &.color-orange {
+    path {
+      fill: $orange;
+    }
+  }
+}
+
+button.hamburger-wrapper {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  background: transparent;
+  border: none;
+  height: 39px;
+  overflow: hidden;
+  position: relative;
+  padding: 7px 0px;
+  transition: all 0.25s ease-in-out;
+  width: 46px;
+  z-index: 10000000;
+  .close {
+    @include subhead-font();
+    color: $black;
+    font-size: 0.8rem;
+    padding-top: 20px;
+    transition: transform 0.5s ease-in-out;
+    text-transform: uppercase;
+  }
+  &.modal {
+    .close {
+      padding-top: 0;
+    }
+    &:hover {
+      background: $orange;
+    }
+  }
+  .hamburger {
+    @include flexbox();
+    @include justify-content(center);
+    border-radius: 50%;
+    height: 25px;
+    position: relative;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    span {
+      background: $black;
+      display: block;
+      height: 5px;
+      left: 0;
+      position: absolute;
+      opacity: 1;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      width: 30px;
+
+      &:first-child {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 10px;
+      }
+      &:nth-child(3) {
+        top: 10px;
+      }
+      &:nth-child(4) {
+        top: 20px;
+      }
+    }
+  }
+  &.open {
+    border-color: $black;
+    .hamburger {
+      span:first-child {
+        width: 0;
+      }
+      span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      span:nth-child(4) {
+        width: 0;
+      }
+    }
+  }
+}
+
+.buttons-container {
+  @include flexbox();
+  @include flex-flow(row wrap);
+  @include justify-content(flex-start);
+  a {
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+  @include medium-and-lower() {
+    @include justify-content(flex-start);
+    a {
+      margin-right: 50px;
+    }
+  }
+  @include tablet-and-lower() {
+    @include justify-content(flex-start);
+    a {
+      margin-right: 30px;
+    }
+  }
+}
+
+// image slider
+
+.image-slider {
+  height: 100%;
+}
+
+.slick-list {
+  height: 100%;
+  div {
+    height: 100%;
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  stroke: none;
+  z-index: 100;
+  svg path {
+    transition: all 0.3s linear;
+  }
+
+  &.slick-prev {
+    left: 75px;
+    &::before {
+      display: none;
+    }
+    @include mobile {
+      left: 10px;
+    }
+  }
+  &.slick-next {
+    right: 95px;
+    &::before {
+      display: none;
+    }
+    @include mobile {
+      right: 10px;
+    }
+  }
+  &:hover {
+    svg path {
+      fill: $orange;
+      transition: all 0.3s linear;
+    }
+  }
+}
+
+/* PRESS SLIDER */
+
+.press-slider {
+  .slick-slider {
+    padding-bottom: 60px;
+  }
+  .slick-dots li button:before {
+    font-size: 10px;
+  }
+
+  .slick-dots li {
+    padding: 0 !important;
+  }
+
+  .slick-list div {
+    padding-bottom: 8px;
+  }
+
+  .slick-next,
+  .slick-prev {
+    height: 55px;
+    width: 35px;
+    svg {
+      height: auto;
+      width: 100%;
+     
+    }
+  }
+
+  .slick-next {
+    right: 60px;
+    top: calc(100% + 10px);
+    @include small {
+      right: 30px;
+    }
+    @include x-small {
+      right: 10px;
+      top: calc(100% + 20px);
+    }
+  }
+  .slick-prev {
+    left: 60px;
+    top: calc(100% + 10px);
+    @include small {
+      left: 30px;
+    }
+    @include x-small {
+      left: 10px;
+      top: calc(100% + 20px);
+    }
+  }
+}
+
+// logo slider
+
+.logo-slider {
+  .slick-track {
+    .slick-slide {
+     
+    }
+  }
+  .slick-next {
+    height: 30px;
+    right: 60px;
+    top: -117px;
+    width: 41px;
+    @include small {
+      right: 30px;
+    }
+  }
+
+  .slick-dots {
+    bottom: -35px;
+    li {
+      button:before {
+        color: $white !important;
+        font-size: 8px;
+        opacity: 0.5;
+      }
+      &.slick-active button:before {
+        opacity: 1 !important;
+      }
+    }
+  }
+  
+  .slick-track {
+    @include flexbox();
+    @include align-items(center);
+  }
+
+  .slick-slide {
+    div:first-child {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+    }
+  }
+}
+
+.white-background {
+  .logo-slider {
+    .slick-track {
+      .slick-slide {
+        svg.black {
+          max-height: 100%;
+          width: 100%;
+          path, polygon, polyline, ellipse, circle, line, rect {
+            fill: $black;
+          }
+      
+        }
+      }
+    }
+    .slick-next {
+      svg {
+        path {
+          fill: $black;
+        }
+      }
+    }
+    .slick-dots {
+      bottom: -35px;
+      li {
+        button:before {
+          color: $black !important;
+          font-size: 8px;
+          opacity: 0.5;
+        }
+        &.slick-active button:before {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+}

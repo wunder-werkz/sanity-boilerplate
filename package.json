@@ -17,7 +17,7 @@
     "@sanity/client": "6.4.7",
     "@sanity/demo": "1.0.2",
     "@sanity/vision": "3.15.1",
-    "next": "13.4.17",
+    "next": "^14.2.13",
     "next-sanity": "5.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -31,7 +31,7 @@
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.17",
     "eslint-plugin-simple-import-sort": "10.0.0",
-    "postcss": "8.4.28",
+    "postcss": "^8.4.47",
     "prettier": "3.0.2",
     "prettier-plugin-packagejson": "2.4.5"
   },
